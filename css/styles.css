@@ -69,6 +69,17 @@ body {
   overflow: hidden;
 }
 
+.visually-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .container {
   width: 1158px;
   padding: 0 15px 0 15px;
@@ -507,7 +518,7 @@ body {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: rgb(255, 255, 255, 0, 5);
+  color: rgb(255, 255, 255, 0, 0.5);
 }
 
 .footer-btn-subscribe {
@@ -806,6 +817,7 @@ body {
 
 .modal-form-input {
   font-size: 12px;
+  background-color: #FCFCFC;
   width: 100%;
   height: 40px;
   border: 1px solid rgba(46, 47, 66, 0.4);
@@ -833,22 +845,109 @@ body {
   position: relative;
 }
 
-
-
 .modal-form-input-icon {
-position: absolute;
-top: 50%;
-left: 16px;
-transform: translateY(-50%);
-transition: fill var(--transition-dur-and-fun);
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  transition: fill var(--transition-dur-and-fun);
 }
 
 .modal-form-input:focus {
   outline: none;
-  border-color: var(--primary-button-bg); 
+  border-color: var(--primary-button-bg);
 }
 
 .modal-form-input:focus + .modal-form-input-icon {
-  fill: var(--primary-button-bg); 
+  fill: var(--primary-button-bg);
+}
+
+.modal-form-message {
+  resize: none;
+  font-size: 12px;
+  background-color: #FCFCFC;
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  transition: border-color var(--transition-dur-and-fun);
+  border-radius: 4px;
+}
+
+.modal-form-message::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.modal-form-message:focus {
+  outline: none;
+  border-color: var(--primary-button-bg);
+}
+
+.modal-form-check-dicr {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: 24px;
+  color: var(--icom-primary-color);
+}
+
+.privacy-policy {
+  color: var(--primary-button-bg);
+}
+
+.modal-form-check-dicr::before {
+  display: block;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color var(--transition-dur-and-fun);
+  margin-right: 8px;
+  content: '';
+}
+
+.modal-form-check:checked + .modal-form-check-dicr::before {
+  background-image: url(../images/check-mark.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 16px 8px;
+  background-color: var(--batton-hover-bg);
+}
+
+.modal-form-check:focus + .modal-form-check-dicr::before {
+  outline: 2px solid #000000;
+}
+
+.modal-form-submit {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  letter-spacing: 0.04em;
+  min-width: 169px;
+  height: 56px;
+  padding: 16px 32px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--primary-button-bg);
+  color: var(--primary-button-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-dur-and-fun);
+  fill: #ffffff;
+}
+
+.modal-form-submit:hover,
+.modal-form-submit:focus {
+  background-color: var(--batton-hover-bg);
 }
 /* ==================/MODAL FORM==================== */
